@@ -1,10 +1,28 @@
-html body {
-	background-color: #1c2e4a;
+.pressed {
+	background-color: grey !important;
+	border: 5px solid white;
+	
+}
+.green {
+	background-color:green;
+}
+
+.red {
+	background-color:red;
+}
+
+.blue {
+	background-color:blue;
+}
+
+.yellow {
+	background-color:yellow;
 }
 
 .rows {
 	text-align: center;
 	justify-content: center;
+	
 }
 
 .bigBox {
@@ -12,20 +30,22 @@ html body {
 	
 }
 
-img {
+button {
 	height: 15rem;
 	width: 15rem;
-	margin: 1rem;
+	margin: 5rem;
+	border: 5px solid black;
 }
 
 
 h1 {
 	text-align: center;
-	color: #f5f5dc;
+	color: blue;
 
-.pressed {
-	
-}
+
+
+
+
 
 
 
