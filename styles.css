@@ -1,3 +1,12 @@
+.game-over {
+	background-color: red !important;
+	opacity: 0.8;
+}
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
 .pressed {
 	background-color: grey !important;
 	border: 5px solid white;
@@ -33,14 +42,15 @@
 button {
 	height: 15rem;
 	width: 15rem;
-	margin: 5rem;
+	margin: 1rem;
 	border: 5px solid black;
+	border-radius: 25%;
 }
 
 
 h1 {
 	text-align: center;
-	color: blue;
+	color: white;
 
 
 

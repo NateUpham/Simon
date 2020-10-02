@@ -21,9 +21,6 @@ function nextSequence(){
 	var randomChosenColor = buttonColors[randomNumber];
 	gamePattern.push(randomChosenColor);
 	$("#" + randomChosenColor).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-	//playSound(randomChosenColor);	
-	console.log(gamePattern);
-	console.log(guessPattern);
 	
 };
 
@@ -32,28 +29,33 @@ $(".button").click(function(){
 	var guess = event.srcElement.id;
 	guessPattern.push(guess);
 	checkAnswer(guessPattern.length-1);
-	pressAnimation();
+	if(gameStart){
+	$("#"+ guess).addClass("pressed");
+	setTimeout(function(){
+		$("#"+guess).removeClass("pressed");
+}, 300);
+};
 
 });
 
 function checkAnswer(currentLevel){
-	if (guessPattern[currentLevel] = gamePattern[currentLevel]){
+	if (guessPattern[currentLevel] == gamePattern[currentLevel]){
 		if (guessPattern.length === gamePattern.length){
-        	setTimeout(function () {
+			setTimeout(function(){
           		nextSequence();
-       	 	}, 1000);
-      }	
+			}, 1000);
+       	
+      		};	
 	}
-	else{
-		playSound("wrong");
+	else { 
+		startOver();
       		$("body").addClass("game-over"); 
-      		$("#level-title").text("Game Over, Press Any Key to Restart");
-
+      		$("h1").text("Game Over, Press Any Key to Restart");
       		setTimeout(function () {
         		$("body").removeClass("game-over");
       		}, 200);
 
-      		startOver();
+      		
 	}
 }
 
@@ -63,19 +65,9 @@ function checkAnswer(currentLevel){
 }
 */
 
-function pressAnimation(guess){
-	if(gameStart){
-	var test = guess.target.id;
-	$("#"+test).addClass("pressed");
-	setTimeout(function(){
-		$("#"+test).removeClass("pressed");
-}, 300);
-};
-}
-
 function startOver() {
   level = 0;
   gamePattern = [];
-  started = false;
+  gameStart = false;
 }
 
