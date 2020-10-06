@@ -56,6 +56,10 @@ h1 {
 p {
 	color: white;
 }
+body input {
+	width: 400px;
+	height: 40px;
+}
 
 
 
